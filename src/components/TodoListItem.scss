@@ -1,11 +1,20 @@
-.TodoListItem {
-  padding: 1rem;
-  display: flex;
-  align-items: center; // 세로 중앙 정렬
+.TodoListItem-virtualzed {
   &:nth-child(even) {
     // 일련의 형제에서 숫자 위치가 짝수인것만 배경색 설정
     background: #e6f1fb;
   }
+   // 엘리먼트 사이사이에 테두리를 넣어 줌
+   &+& {
+    border-top: 1px solid #dee2e6;
+  }
+}
+
+
+.TodoListItem {
+  padding: 1rem;
+  display: flex;
+  align-items: center; // 세로 중앙 정렬
+  
   .checkbox {
     cursor: pointer;
     flex: 1; // 차지할 수 있는 모든 영역 차지
@@ -41,8 +50,5 @@
     }
   }
 
-  // 엘리먼트 사이사이에 테두리를 넣어 줌
-  &+& {
-    border-top: 1px solid #dee2e6;
-  }
+ 
 }
